@@ -1,2 +1,2 @@
-# cad_cam_cae_termwork
+# CAD/CAM/CAE Termwork
 Termwork and Assignments for CAD/CAM/CAE subject
