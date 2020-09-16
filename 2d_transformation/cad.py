@@ -54,7 +54,10 @@ def revert(matrix):
 
 def plot(ax, points):
 	ax.clear()
-	ax.add_patch(Polygon(points))
+	if len(points) == 2:
+		ax.add_line(Line2D(*list(zip(*points))))
+	else:
+		ax.add_patch(Polygon(points))
 	xs, ys = list(zip(*points))
 	ax.scatter(xs, ys)
 	

@@ -38,14 +38,16 @@ def shear(matrix):
 def do_nothing(matrix):
 	return matrix
 
+def Quit():
+	pass
 
-commands = {1: translate, 2: rotate, 3: scale, 4: reflect_x, 5: reflect_y, 6: shear}
+
+commands = {1: translate, 2: rotate, 3: scale, 4: reflect_x, 5: reflect_y, 6: shear, 0: Quit}
 
 def print_menu():
 	for key, val in commands.items():
 		print(str(key) + ". " + val.__name__)
 	print('\n')
-
 
 points = np.array([(0.5,-0.5), (0.5, 0.5), (-0.5, 0.5), (-0.5, -0.5)])
 
@@ -64,7 +66,7 @@ def main():
 		option = int(input("Operation no. : "))
 		if option == 0:
 			plt.close()
-			print("\n\nThank you for trying the script out!\Consider starring the repo on GitHub :D\n\n")
+			print("\n\nThank you for trying the script out!\nConsider starring the repo on GitHub :D\n\n")
 			break
 		points = cad.create_homogenous(points)
 		points = commands.get(option, do_nothing)(points)
@@ -76,5 +78,3 @@ def main():
 
 if __name__=="__main__":
 	main()
-
-	
