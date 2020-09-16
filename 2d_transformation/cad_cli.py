@@ -55,11 +55,11 @@ def set_points(arr):
 
 def main():
 	global points
-	fig, ax = plt.subplots(figsize=(10,10))
+	fig, ax = plt.subplots(figsize=(5,5))
 	cad.plot(ax, points)
 	plt.show(block=False)
 	while True:
-		fig, ax = plt.subplots(1)
+		fig, ax = plt.subplots(figsize=(5,5))
 		print_menu()
 		option = int(input("Operation no. : "))
 		if option == 0:

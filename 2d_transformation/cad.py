@@ -44,7 +44,7 @@ def rotate(matrix, theta=0):
 	return np.dot(rm, matrix)
 
 def shear(matrix, sx, sy):
-	sm = np.array([[1, sx, 0], [sy, 0, 1], [0, 0, 1]])	
+	sm = np.array([[1, sx, 0], [sy, 1, 0], [0, 0, 1]])	
 	return np.dot(sm, matrix)
 
 def revert(matrix):
@@ -59,9 +59,9 @@ def plot(ax, points):
 	ax.scatter(xs, ys)
 	
 	ax.add_line(Line2D([min(xs)-5, max(xs)+5], [0,0], color='r'))
-	ax.add_line(Line2D([0,0], [min(ys)-5, max(ys)+4], color='r'))
-	ax.set_xticks(np.arange(min(xs)-5, max(xs)+6, 1))
-	ax.set_yticks(np.arange(min(ys)-5, max(ys)+6, 1))
+	ax.add_line(Line2D([0,0], [min(ys)-5, max(ys)+5], color='r'))
+	ax.set_xticks(np.arange(int(min(xs)-5), int(max(xs)+6), 1))
+	ax.set_yticks(np.arange(int(min(ys)-5), int(max(ys)+6), 1))
 
 	ax.set_aspect('equal')
 	return ax
